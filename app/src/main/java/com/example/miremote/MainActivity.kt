@@ -31,7 +31,7 @@ class StubConnection : TvConnection {
 }
 
 class MainActivity : ComponentActivity() {
-    private val tv: TvConnection = StubConnection()
+    private val tv : TvConnection by lazy { RealConnection(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
